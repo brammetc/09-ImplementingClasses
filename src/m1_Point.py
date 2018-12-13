@@ -5,7 +5,7 @@ NOTE: This is NOT rosegraphics -- it is your OWN Point class.
 Authors: David Mutchler, Vibha Alangar, Dave Fisher, Amanda Stouder,
          their colleagues and Tanner Brammeier.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -50,7 +50,6 @@ class Point(object):
         self.x = x
         self.y = y
         self.moves = 0
-        self.distance
 
     def __repr__(self):
         return "Point({}, {})".format(self.x, self.y)
@@ -71,8 +70,9 @@ class Point(object):
     def get_number_of_moves_made(self):
         return self.moves
 
-    def get_distance_from(self):
-        self.distance =
+    def get_distance_from(self, other_point):
+        self.distance = math.sqrt((other_point.x - self.x)**2 + (other_point.y - self.y)**2)
+        return self.distance
 
 
 
@@ -707,7 +707,7 @@ def run_test_get_distance_from():
         print('Actual   p2 to p4:', p2.get_distance_from(p4))
     """
     # -------------------------------------------------------------------------
-    # TODO: 9.  Follow the same instructions as in _TODO_ 3 above,
+    # DONE: 9.  Follow the same instructions as in _TODO_ 3 above,
     #    but for the  get_distance_from  method specified above.
     # -------------------------------------------------------------------------
     print()
